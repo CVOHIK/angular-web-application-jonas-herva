@@ -1,0 +1,8 @@
+<div class="modal-body">
+  <agm-map [latitude]="geometry.y" [longitude]="geometry.x" [zoom]="12">
+    <agm-marker [latitude]="geometry.y" [longitude]="geometry.x"></agm-marker>
+  </agm-map>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

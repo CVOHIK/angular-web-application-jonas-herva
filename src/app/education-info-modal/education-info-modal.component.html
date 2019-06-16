@@ -1,0 +1,27 @@
+<div class="modal-body">
+  <table class="table">
+    <tr>
+      <td>Id:</td>
+      <td>{{ data.id }}</td>
+    </tr>
+    <tr>
+      <td>Naam:</td>
+      <td>{{ data.naam }}</td>
+    </tr>
+    <tr>
+      <td>Type:</td>
+      <td>{{ data.type }}, {{ data.subtype }}</td>
+    </tr>
+    <tr>
+      <td>Thema:</td>
+      <td>{{ data.thema }}</td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td>{{ data.straat }} {{ data.huisnummer }}, {{ data.postcode }} {{ data.district }}</td>
+    </tr>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

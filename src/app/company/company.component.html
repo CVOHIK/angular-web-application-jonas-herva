@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Verwaarloosde bedrijfsruimten</h1>
+    <p class="lead">Vlaamse inventaris van leegstaande en verwaarloosde bedrijfsruimten (punten-laag)</p>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Perceel nr.</th>
+      <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let company of companies" class="clickable" (click)="onClickRow(company)">
+      <th>{{ company.attributes.OBJECTID }}</th>
+      <td>{{ company.attributes.PERCEELNUMMER }}</td>
+      <td>{{ company.attributes.STRAATNAAM }} {{ company.attributes.HUISNUMMER }}, {{ company.attributes.POSTCODE }} {{ company.attributes.DISTRICT }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

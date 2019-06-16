@@ -1,18 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EducationInfoModalComponent } from './education-info-modal/education-info-modal.component';
+import { CompanyInfoModalComponent } from './company-info-modal/company-info-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    routedComponents,
+    EducationInfoModalComponent,
+    CompanyInfoModalComponent
+  ],
+  entryComponents: [
+    EducationInfoModalComponent,
+    CompanyInfoModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpcz4zxy3kX5Ao61RezEjKkjtOKs0t9-w'
+    })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

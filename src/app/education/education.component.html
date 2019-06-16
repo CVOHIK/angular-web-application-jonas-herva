@@ -1,0 +1,3 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+  <agm-marker *ngFor="let school of schools" [latitude]="school.geometry.y" [longitude]="school.geometry.x" (markerClick)="onMarkerClick(school.attributes)"></agm-marker>
+</agm-map>
